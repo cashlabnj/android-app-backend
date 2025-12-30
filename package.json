@@ -1,0 +1,26 @@
+{
+  "name": "polymarket-signal-backend",
+  "version": "1.0.0",
+  "description": "Backend service that generates and pushes signals to Supabase",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "generate:15m": "node src/generateSignals.js 15m",
+    "generate:1h": "node src/generateSignals.js 1h",
+    "generate:daily": "node src/generateSignals.js daily",
+    "generate:all": "node src/generateSignals.js all",
+    "update:prices": "node src/updatePrices.js",
+    "backtest": "node src/runBacktest.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "node-cron": "^3.0.3",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
